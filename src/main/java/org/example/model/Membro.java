@@ -18,7 +18,7 @@ public class Membro {
         this.nome = nome;
         this.cpf = CPF;
         this.telefone = telefone;
-        endereco = endereco;
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -50,20 +50,20 @@ public class Membro {
     }
 
     public void setEndereco(String endereco) {
-        endereco = endereco;
+        this.endereco = endereco;
     }
 
     public void membroMenu(){
         Scanner scanner = new Scanner(System.in);
 
         while (true){
-            System.out.println("=============== Area de Membros ===============");
+            System.out.println("=============== Area de Membros ===============\n");
             System.out.println("[1] - Ver membros");
             System.out.println("[2] - Adicionar membros");
             System.out.println("[3] - Buscar membro");
             System.out.println("[4] - Atualizar membro");
             System.out.println("[5] - Remover membro");
-            System.out.println("[0] - Sair");
+            System.out.println("[0] - Sair\n");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -77,30 +77,30 @@ public class Membro {
                     break;
 
                 case 3:
-                    System.out.println("Nome completo do membro: ");
+                    System.out.print("Nome completo do membro: ");
                     String nome = scanner.nextLine();
                     Membro membroEncontrado = controller.buscarMembro(nome);
                     if (membroEncontrado != null){
-                        System.out.println("Membro encontrado: " + membroEncontrado);
+                        System.out.println("\nMembro encontrado: " + membroEncontrado + "\n");
                     }else {
-                        System.out.println("Membro nao encontrado");
+                        System.out.println("Membro NÃO encontrado");
                     }
                     break;
 
                 case 4:
-                    System.out.println("Nome completo do membro: ");
+                    System.out.print("Nome completo do membro: ");
                     nome = scanner.nextLine();
                     controller.atualizarMembro(nome);
                     break;
 
                 case 5:
-                    System.out.println("Nome completo do membro: ");
+                    System.out.print("Nome completo do membro: ");
                     nome = scanner.nextLine();
                     controller.removerMembro(nome);
                     break;
 
                 case 0:
-                    System.out.println("Saindo...");
+                    System.out.print("\nSaindo...");
                     return;
 
                 default:
