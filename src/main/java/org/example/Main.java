@@ -13,14 +13,18 @@ public class Main {
             while (true){
                 System.out.println("=============== Biblioteca ===============");
                 System.out.println("\nMenu......................................\n");
-                System.out.println("[1] - Área de membros");
+                System.out.println("[1] - Área de membros\n");
 
-                System.out.println("Escolha um numero para navegar pelo menu: ");
+                System.out.print("Escolha um numero para navegar pelo menu: ");
                 int choice = scanner.nextInt();
 
                 switch (choice){
                     case 1:
                         membro.membroMenu();
+                        break;
+
+                    default:
+                        System.out.println("escolha invalida");
                         break;
                 }
             }
