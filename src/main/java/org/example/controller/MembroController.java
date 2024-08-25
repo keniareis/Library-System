@@ -8,8 +8,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MembroController {
+
     List<Membro> membros = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
+    public List<Membro> getMembros() {
+        return membros;
+    }
     public void addMembro() {
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
